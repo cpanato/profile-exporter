@@ -28,8 +28,8 @@ VERSION ?= $(if $(RELEASE_TAG),$(RELEASE_TAG),$(shell $(CMD_GIT) describe --tags
 OUT_DIR ?= dist
 GO_SRC := $(shell find . -type f -name '*.go')
 OUT_BIN := $(OUT_DIR)/profile-exporter
-OUT_DOCKER ?= ghcr.io/polarsignals/profile-exporter
-OUT_DOCKER_DEV ?= polarsignals/profile-exporter
+OUT_DOCKER ?= ghcr.io/cpanato/profile-exporter
+OUT_DOCKER_DEV ?= cpanato/profile-exporter
 
 .PHONY: all
 all: build
