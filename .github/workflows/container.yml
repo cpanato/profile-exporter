@@ -120,7 +120,7 @@ jobs:
         run: make container
 
       - name: Check images are created
-        run: podman images | grep 'ghcr.io/polarsignals/profile-exporter'
+        run: podman images | grep 'ghcr.io/cpanato/profile-exporter'
 
       - name: Install cosign
         uses: sigstore/cosign-installer@11086d25041f77fe8fe7b9ea4e48e3b9192b8f19 # v3.1.2
@@ -128,7 +128,7 @@ jobs:
       - name: Login to registry
         if: ${{ github.event_name != 'pull_request' }}
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | podman login -u polarsignals --password-stdin ghcr.io
+          echo "${{ secrets.GITHUB_TOKEN }}" | podman login -u cpanato --password-stdin ghcr.io
 
       - name: Install crane
         uses: imjasonh/setup-crane@00c9e93efa4e1138c9a7a5c594acd6c75a2fbf0c # v0.3
